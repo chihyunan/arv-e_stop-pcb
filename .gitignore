@@ -1,0 +1,7 @@
+# Altium files to ignore
+History/
+__Backup/
+*.Logs
+*.DXPPrjLog
+*.AutoSave
+*.Lck

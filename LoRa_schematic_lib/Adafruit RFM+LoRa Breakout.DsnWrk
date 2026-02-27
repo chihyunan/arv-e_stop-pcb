@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=LoRa_schematic_lib.PrjPcb
+[Project2]
+ProjectPath=..\lora_transmitter.PrjPcb
