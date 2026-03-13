@@ -1,0 +1,20 @@
+Altium Designer Pick and Place Locations
+\\engin-labs.m.storage.umich.edu\engin-labs\home\jamesann\windat.v2\Documents\GitHub\arv-e_stop-pcb\Project Outputs for lora_transmitter\Pick Place for transmitter.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       12/03/26
+Time:       19:41
+Revision:   bfb70669c42237e17b40b969bcebc37fa85a4b88
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"SW1","B3F-1000","TopLayer","OMRON-B3F-1000-4_V","4595.000","3025.000","180","Tactile Switch, SPST-NO, 0.05 A, 5 to 24 V, -25 to 70 degC, 4-Pin THD, RoHS, Bulk"
+"R1","MBA02040C2200FC100","TopLayer","FP-MBA0204-MFG","4450.000","2740.000","0","RES 220 OHM 0.4W 1% AXIAL"
+"LORA-R","SSW-110-01-G-S","TopLayer","FP-SSW-110-01-G-S-MFG","5709.850","2815.000","270",""
+"LORA-ANT","SSW-105-01-G-S-002","TopLayer","FP-SSW-105-01-G-S-002-MFG","6710.000","3065.000","270","CONN RCPT 5POS 0.1 GOLD PCB"
+"LED","LTL-1CHEE","TopLayer","FP-LTL-1CHEE-MFG","4725.000","2740.000","0","LED RED CLEAR T/H"
+"ESP-R","SSW-120-01-G-S","TopLayer","FP-SSW-120-01-G-S-MFG","4240.000","3380.000","270","SSW-120-01-G-S SSW - Samtec 2.54mm Single Row Straight Socket Strip 8.5 Profile (mcv)(TO22)"
+"ESP-L","SSW-120-01-G-S","TopLayer","FP-SSW-120-01-G-S-MFG","3340.000","3380.000","270","SSW-120-01-G-S SSW - Samtec 2.54mm Single Row Straight Socket Strip 8.5 Profile (mcv)(TO22)"
