@@ -6,7 +6,7 @@ Custom 2-layer PCB for wireless emergency stop (E-Stop) transmitter
 
 ## Overview
 
-This board implements a handheld wireless E-Stop transmitter for the ARV autonomous robot platform. It interfaces an ESP32 microcontroller with a 900MHz LoRa radio module to transmit an emergency stop signal over long range. A tactile switch triggers the E-Stop event, and an LED provides visual status feedback.
+This board implements a handheld wireless E-Stop transmitter for the ARV autonomous robot platform. It interfaces an ESP32 microcontroller with a 900MHz LoRa radio module to transmit an emergency stop signal over long range. A switch triggers the E-Stop event, and an LED provides visual status feedback.
 
 ---
 
@@ -115,8 +115,7 @@ arv-e_stop-pcb/
 
 PCB fabricated by **JLCPCB** (2-layer, standard FR4).  
 Gerber files and NC drill files located in `/Project Outputs/`.
-
-SMT assembly by JLCPCB for select components. Through-hole components hand-soldered.
+SMT assembly by JLCPCB for select components. Select components hand-soldered.
 
 ---
 
@@ -125,7 +124,6 @@ SMT assembly by JLCPCB for select components. Through-hole components hand-solde
 - No onboard power regulation — dependent on ESP32 dev board
 - No hardware debounce on SW1 — must be handled in firmware
 - Keepout zone is smaller than theoretical λ/4 at 915MHz (~82mm) due to board size constraints
-- Single-sided component placement only
 
 ---
 
@@ -140,4 +138,4 @@ SMT assembly by JLCPCB for select components. Through-hole components hand-solde
 
 ## License
 
-For internal ARV team use. Not licensed for redistribution.
+For internal ARV team use. MIT license for redistribution. 
