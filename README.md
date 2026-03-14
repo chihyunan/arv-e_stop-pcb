@@ -6,13 +6,27 @@ Custom 2-layer PCB for wireless emergency stop (E-Stop) transmitter
 
 ## Overview
 
-This board implements a handheld wireless E-Stop transmitter for the ARV autonomous robot platform. It interfaces an ESP32 microcontroller with a 900MHz LoRa radio module to transmit an emergency stop signal over long range. A switch triggers the E-Stop event, and an LED provides visual status feedback.
+This board implements a handheld wireless E-Stop transmitter for the ARV autonomous robot platform. It interfaces an ESP32 microcontroller with a 900MHz LoRa radio module to transmit an emergency stop signal over >100m range. A switch triggers the E-Stop event, and an LED provides visual status feedback.
 ![PCB 3D View](images/sc3d.png)
 ![PCB 2D View](images/sc2dpcb.png)
 
 ---
 
+## Software
+
+### ROS2 Interface
+Connected to `embedded_ros_marvin` via serial bridge.
+
+ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → ROS2 `/estop` topic
+- **Code** placed in: 
+
 ## Hardware
+
+### Why These Parts
+- **LoRa (SX1276):** 900MHz, >1km range, low power — chosen over
+  WiFi/BT for reliability in outdoor competition environments
+- **ESP32:** handles LoRa SPI + ROS2 serial bridge in one package,
+  onboard WiFi useful for debugging
 
 | Component | Part | Description |
 |---|---|---|
