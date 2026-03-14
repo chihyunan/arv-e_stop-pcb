@@ -36,23 +36,13 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 | Switch | Omron B3F-1000 | Tactile E-Stop trigger |
 | Status LED | 3mm LED | Visual power/status indicator |
 | Current Limiting Resistor | 220Ω metal film | LED current limiting |
-| PCB | 2-layer FR4, 1.6mm | JLCPCB fabrication |
+| PCB | 2-layer FR4, 1.6mm, (Top signal + Bottom GND plane) | JLCPCB fabrication |
 
 ---
+## Mechanical
 
-## Board Specifications
-
-| Parameter | Value |
-|---|---|
-| Layers | 2 (Top signal + Bottom GND plane) |
-| Material | FR4 |
-| Thickness | 1.6mm |
-| Surface Finish | HASL |
-| Trace Width (Signal) | 10 mil |
-| Trace Width (Power) | 25 mil |
-| Min Clearance | 10 mil |
-| Mounting Holes | #4-40 (125 mil / 3.175mm) |
-
+- All mounting holes: #4-40, 3.175mm diameter.
+- See `Project Outputs/fab-drawing.pdf` for dimensioned drawing.
 ---
 
 ## Pin Mapping
@@ -129,14 +119,6 @@ arv-e_stop-pcb/
 
 ---
 
-## Fabrication
-
-PCB fabricated by **JLCPCB** (2-layer, standard FR4).  
-Gerber files and NC drill files located in `/Project Outputs/`.
-SMT assembly by JLCPCB for select components. Select components hand-soldered.
-
----
-
 ## Known Limitations & Future Work
 
 - No onboard power regulation — dependent on ESP32 dev board
@@ -148,12 +130,12 @@ SMT assembly by JLCPCB for select components. Select components hand-soldered.
 ## Credits
 
 - **ARV Project Team — University of Michigan**
-- PCB designed in Altium Designer
-- LoRa breakout board: [Adafruit RFM9x](https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts)
-- Antenna: TI.92.2113 — TI 915MHz series
+- Contributors :  [@yourusername](https://github.com/yourusername)
+- Developed: September 2025 - March 2026
+- Last Modified: March 14, 2026
 
 ---
 
 ## License
 
-For internal ARV team use. MIT license for redistribution. 
+MIT license for redistribution. 
