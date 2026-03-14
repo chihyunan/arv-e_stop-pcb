@@ -49,7 +49,7 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=transmitter.SchDoc
+DocumentPath=estop-lora-esp32.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -66,7 +66,7 @@ GenerateClassCluster=0
 DocumentUniqueId=SNOTUBQH
 
 [Document2]
-DocumentPath=transmitter.PcbDoc
+DocumentPath=estop-lora-esp32.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -83,7 +83,7 @@ GenerateClassCluster=0
 DocumentUniqueId=HAQSCBWL
 
 [Document3]
-DocumentPath=CAM_3_12.Cam
+DocumentPath=estop-lora-esp32 CAM for gerber.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -100,7 +100,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document4]
-DocumentPath=CAM_3_12_NCdrill.Cam
+DocumentPath=estop-lora-esp32-CAM for NCDrill.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
