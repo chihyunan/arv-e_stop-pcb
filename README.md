@@ -42,7 +42,7 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 ## Mechanical
 
 - All mounting holes: #4-40, 3.175mm diameter.
-- See `Project Outputs/fab-drawing.pdf` for dimensioned drawing.
+- See `Project Outputs/~.dxf` for dimensions.
 ---
 
 ## Pin Mapping
@@ -67,25 +67,23 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 ## Design Considerations
 
 **RF / Antenna**
-- Antenna operates at 915MHz (LoRa band)
-- Copper keepout zone maintained around antenna radiating element to minimize ground plane interference
-- SMA connector directly interfaces Adafruit RFM9x breakout to TI.92.2113 antenna — no impedance matching network required due to short connection length
-- Adafruit breakout handles internal RF routing and matching to the RFM9x module
-
-**Power**
-- Board powered via ESP32 3.3V rail
-- LoRa module powered from same 3.3V supply through VIN pin
-- No dedicated power regulation on this PCB — relies on ESP32 dev board onboard regulator
+- The TI 915MHz monopole is mounted vertically (perpendicular to PCB) at the board edge, fed via SMA directly on the Adafruit RFM9x breakout. The Adafruit breakout handles all internal RF routing and matching to the RFM9x; no additional matching network required.
+- With the monopole vertical over the bottom ground plane, image theory applies: the ground plane acts as an infinite conductor mirror, making the monopole electrically equivalent to a half-wave dipole radiating broadside in the upper hemisphere. Effective ground plane extent from the antenna feed point is approximately 100mm, exceeding the λ/4 requirement at 915MHz (~82mm).
+- ESP32 module includes a meander-line Inverted F-antenna(IFA) for 2.4GHz WiFi/BT. 
+- Co-existence with the 915MHz LoRa antenna is not a concern: the ~800MHz frequency separation (frees from near-field coupling) and the IFA's horizontal radiation geometry is orthogonal to the vertically-polarised monopole.
 
 **Ground Plane**
-- Solid ground pour on bottom layer for signal integrity and noise reduction
-- Thermal reliefs on GND through-hole pads for solderability
-- Ground plane intentionally removed in antenna keepout region
+- Solid copper pour on bottom layer serves dual purpose: general signal integrity and as the image plane for the 915MHz monopole.
+- Thermal reliefs on GND through-hole pads for solderability.
+- Ground plane removed on in the manufacturer-specified keepout region around the ESP32 WiFi antenna to prevent detuning of the module's integrated IFA matching network.
+
+**Power**
+- Both the ESP32 and LoRa module are powered from the onboard 3.3V regulator via VIN. 
 
 **LED Circuit**
 - GPIO → 220Ω (R1) → LED anode → LED cathode → GND
 - At 3.3V supply with 2.0V LED forward voltage: $I = \frac{3.3-2.0}{220} \approx 5.9\text{mA}$
-- Within safe operating range for standard 3mm LED (20mA max)
+- Within operating range for standard 3mm LED (20mA max)
 
 ---
 
@@ -98,7 +96,7 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 | Typical Range (open field) | 300m – 1km depending on spreading factor |
 | Supply Voltage | 3.3V |
 | LED Current | ~6mA |
-| Board Dimensions | See PCB files |
+| Board Dimensions | ~100x60mm |
 
 > **Note:** Actual range dependent on firmware spreading factor, transmit power settings, and environment. LoRa range degrades significantly in urban/indoor environments with multipath interference.
 
@@ -116,14 +114,6 @@ arv-e_stop-pcb/
 │   └── NC Drill/
 └── README.md
 ```
-
----
-
-## Known Limitations & Future Work
-
-- No onboard power regulation — dependent on ESP32 dev board
-- No hardware debounce on SW1 — must be handled in firmware
-- Keepout zone is smaller than theoretical λ/4 at 915MHz (~82mm) due to board size constraints
 
 ---
 
