@@ -87,6 +87,29 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 
 ---
 
+## Antenna Validation
+
+![S11: Effect of Ground on Monopole Return Loss](images/s11_comparison.png)
+
+Three ground conditions were measured/simulated to validate the PCB ground plane design:
+- **No Ground Plane** — resonance shifts down to 856.5 MHz due to uncontrolled 
+  common-mode return current on the coax outer conductor, which extends the effective 
+  radiating length beyond the physical antenna: $L_{\text{eff}} = L_{\text{ant}} + \Delta L_{\text{coax}}$
+- **PCB Ground Plane** — resonance recovers to 915.0 MHz, confirming the ~100mm 
+  ground plane extent is sufficient for proper monopole operation
+- **HFSS Infinite Ground Plane** — also resonates at 915.0 MHz but with improved 
+  return loss (~−30 dB vs ~−13 dB), representing the theoretical upper bound; the 
+  close agreement with the PCB result validates the finite ground plane approximation
+
+### Far-Field Radiation Pattern
+
+![Far-Field Radiation Pattern: Finite vs. Infinite Ground Plane](images/farfield_comparison.png)
+
+The ground plane reflects the monopole's radiation into the upper hemisphere 
+via image theory, approximating a half-wave dipole pattern. Edge diffraction from 
+the finite PCB ground introduces minor pattern distortion near the horizon 
+compared to the ideal case.
+
 ## Expected Performance
 
 | Metric | Expected Value |
