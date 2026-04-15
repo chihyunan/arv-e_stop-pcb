@@ -89,7 +89,7 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 
 ## Antenna Validation
 
-![S11: Effect of Ground on Monopole Return Loss](images/s11_comparison.png)
+![S11: Effect of Ground on Monopole Return Loss](images/S11_Monopole_GNDPlaneInfluence.jpg)
 
 Three ground conditions were measured/simulated to validate the PCB ground plane design:
 - **No Ground Plane** — resonance shifts down to 856.5 MHz due to uncontrolled 
@@ -97,18 +97,16 @@ Three ground conditions were measured/simulated to validate the PCB ground plane
   radiating length beyond the physical antenna: $L_{\text{eff}} = L_{\text{ant}} + \Delta L_{\text{coax}}$
 - **PCB Ground Plane** — resonance recovers to 915.0 MHz, confirming the ~100mm 
   ground plane extent is sufficient for proper monopole operation
-- **HFSS Infinite Ground Plane** — also resonates at 915.0 MHz but with improved 
-  return loss (~−30 dB vs ~−13 dB), representing the theoretical upper bound; the 
-  close agreement with the PCB result validates the finite ground plane approximation
+- **HFSS Infinite Ground Plane** — Provides a theoretical benchmark for $S_{11}$ depth;
+  the alignment in resonant frequency with the PCB result validates the finite ground approximation.
 
 ### Far-Field Radiation Pattern
 
-![Far-Field Radiation Pattern: Finite vs. Infinite Ground Plane](images/farfield_comparison.png)
+(images/3DGain-FinitevsInfinite.jpg)
 
 The ground plane reflects the monopole's radiation into the upper hemisphere 
-via image theory, approximating a half-wave dipole pattern. Edge diffraction from 
-the finite PCB ground introduces minor pattern distortion near the horizon 
-compared to the ideal case.
+via image theory. In the far-field, edge diffraction allows radiation to wrap 
+around the finite PCB, causing the system to behave as an effective asymmetric dipole.
 
 ## Expected Performance
 
