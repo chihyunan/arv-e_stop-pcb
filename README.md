@@ -102,7 +102,7 @@ Three ground conditions were measured/simulated to validate the PCB ground plane
 
 ### Far-Field Radiation Pattern
 
-(images/3DGain-FinitevsInfinite.jpg)
+![Far Field: Finite vs Infinite GND Plane](images/3DGain-FinitevsInfinite.jpg)
 
 The ground plane reflects the monopole's radiation into the upper hemisphere 
 via image theory. In the far-field, edge diffraction allows radiation to wrap 
