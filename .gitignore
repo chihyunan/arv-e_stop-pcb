@@ -1,7 +1,31 @@
-# Altium files to ignore
+# --- Altium Cleanup ---
 History/
+__Previews/
 __Backup/
-*.Logs
-*.DXPPrjLog
-*.AutoSave
-*.Lck
+*.Logs*
+Project\ Logs*/
+
+# --- Output Management ---
+# 1. Ignore all output folders entirely
+Project\ Outputs*/
+
+# 2. Allow Git to look into the folders
+!Project\ Outputs*/
+
+# 3. Whitelist ONLY the files needed for Fabrication & Assembly
+!Project\ Outputs*/*.GTL
+!Project\ Outputs*/*.GBL
+!Project\ Outputs*/*.GTS
+!Project\ Outputs*/*.GBS
+!Project\ Outputs*/*.GTO
+!Project\ Outputs*/*.GBO
+!Project\ Outputs*/*.GTP
+!Project\ Outputs*/*.GBP
+!Project\ Outputs*/*.GKO
+!Project\ Outputs*/*.GML
+!Project\ Outputs*/*.TXT
+!Project\ Outputs*/*.DRL
+!Project\ Outputs*/*.LDP
+
+# 4. Whitelist Pick and Place (if you're doing PCBA/Assembly)
+!Project\ Outputs*/*.csv
