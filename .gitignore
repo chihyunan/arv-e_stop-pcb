@@ -29,3 +29,8 @@ Project\ Outputs*/
 
 # 4. Whitelist Pick and Place (if you're doing PCBA/Assembly)
 !Project\ Outputs*/*.csv
+
+# --- System & Simulation Junk ---
+Thumbs.db
+*.aedtres/
+*.p_bak

@@ -7,8 +7,8 @@ Custom 2-layer PCB for wireless emergency stop (E-Stop) transmitter
 ## Overview
 
 This board implements a handheld wireless E-Stop transmitter for the ARV autonomous robot platform. It interfaces an ESP32 microcontroller with a 900MHz LoRa radio module to transmit an emergency stop signal over >100m range. A switch triggers the E-Stop event, and an LED provides visual status feedback.
-![PCB 3D View](images/sc3d.png)
-![PCB 2D View](images/sc2dpcb.png)
+![PCB 3D View](Images/sc3d.png)
+![PCB 2D View](Images/sc2dpcb.png)
 
 ---
 
@@ -60,7 +60,7 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 | 3.3V | VIN | Power |
 | GND | GND | Ground |
 
-![PCB Schematic View](images/schematic.png)
+![PCB Schematic View](Images/schematic.png)
 
 ---
 
@@ -89,7 +89,7 @@ ESP32 → UART serial → serial monitor script → `/tmp/estop_value.txt` → R
 
 ## Antenna Validation
 
-![S11: Effect of Ground on Monopole Return Loss](images/S11_Monopole_GNDPlaneInfluence.jpg)
+![S11: Effect of Ground on Monopole Return Loss](Images/S11_Monopole_GNDPlaneInfluence.jpg)
 
 Three ground conditions were measured/simulated to validate the PCB ground plane design:
 - **No Ground Plane** — resonance shifts down to 856.5 MHz due to uncontrolled 
@@ -102,7 +102,7 @@ Three ground conditions were measured/simulated to validate the PCB ground plane
 
 ### Far-Field Radiation Pattern
 
-![Far Field: Finite vs Infinite GND Plane](images/3DGain-FinitevsInfinite.jpg)
+![Far Field: Finite vs Infinite GND Plane](Images/3DGain-FinitevsInfinite.jpg)
 
 The ground plane reflects the monopole's radiation into the upper hemisphere 
 via image theory. In the far-field, edge diffraction allows radiation to wrap 
